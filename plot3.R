@@ -4,7 +4,7 @@ DF$timetemp <- paste(DF$Date, DF$Time) ## paste contents of Date and Time column
 DF$Time <- strptime(DF$timetemp, format = "%Y-%m-%d %H:%M:%S") ## convert the content of the above column into class "POSIXlt"
 DF <- DF[DF$Date %in% as.Date(c('2007-02-01', '2007-02-02')), ] ## filters dataframe for the data corresponding to the required 2 days
 
-## create a lineplot for the Global_active_power variable with required annotations format:
+## create plot with required annotations, format and legend:
 with(DF, plot( Time, Sub_metering_1, col = "black", type="l", xlab ="", ylab = "Energy sub metering"))
 with(DF, lines(Time, Sub_metering_2, col = "red"))
 with(DF, lines( Time, Sub_metering_3, col = "blue"))
